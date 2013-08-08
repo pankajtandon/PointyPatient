@@ -1,0 +1,26 @@
+<div style="padding-left:20px; padding-right:20px">
+    <div class="container" >
+        <h3>List Patients</h3>
+        <hr/>
+	    <alert ng-show=$parent.showFeedback close="closeAlert()" type=alertType>{{status}}</alert>
+		<table ng-init="listPatients()" class="table">  
+	        <thead>  
+	          <tr>  
+	            <th>Patient-ID</th>  
+	            <th>First Name</th>  
+	            <th>Last Name</th>  
+	            <th>Visit Date</th>  
+	          </tr>  
+	        </thead>  
+	        <tbody ng-repeat="patient in patientList">  
+	          <tr>  
+	            <td><a href="#/patientDetail/{{patient.id}}">{{patient.id}}</a></td>  
+	            <td>{{patient.firstName}} </td>  
+	            <td>{{patient.lastName}}</td>  
+	            <td>{{patient.visitDate}}</td>  
+	          </tr>  
+	        </tbody>  
+	      </table>  
+
+    </div>
+</div>

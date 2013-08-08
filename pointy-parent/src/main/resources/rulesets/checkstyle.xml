@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<module name="Checker">
+<module name="TreeWalker">
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_misc.html-->
+      <module name="ArrayTypeStyle">
+          <property name="javaStyle" value="true"/>
+      </module>
+
+
+<!-- your standard Checks that come with Checkstyle -->
+<!-- Checks for Copyright -->
+<!-- See http://checkstyle.sourceforge.net/config_misc.html -->
+      <module name="Regexp">
+           <property
+                name="format"
+                value="Copyright"/>
+      </module>
+      <!-- Copyright (c) Lucas Systems LLC -->
+<!-- your standard Checks that come with Checkstyle -->
+<!--checks for Empty Blocks-->
+<!--See:http://checkstyle.sourceforge.net/config_blocks.html-->
+    <module name="EmptyBlock">
+       <property name="option" value="stmt"/>
+       <!--property name="option" value="stmt"/-->
+       <property name="tokens" value="LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, 
+                                      LITERAL_FINALLY, LITERAL_IF, LITERAL_FOR,
+                                      LITERAL_TRY, LITERAL_WHILE, INSTANCE_INIT, STATIC_INIT"/>
+    </module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_coding.html-->
+     <module name="EqualsHashCode"/>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_whitespace.html-->
+<module name="Indentation">  
+       <!-- how many spaces to use for new indentation level -->  
+       <property name="basicOffset" value="4" />  
+       <!-- how far brace should be indented when on next line -->  
+       <property name="braceAdjustment" value="0"/>  
+       <!-- how much to indent a case label -->  
+       <property name="caseIndent" value="2"/>  
+     </module>  
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_whitespace.html-->
+<!-- Checks the Javadoc of a method or constructor. -->  
+     <module name="JavadocMethod">  
+       <!-- Check for JavaDoc only on public methods -->  
+       <property name="severity" value="error"/>  
+       <property name="scope" value="public"/>  
+     </module>  
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_whitespace.html-->
+<module name="JavadocType">  
+       <!-- Check for JavaDoc only on public types -->  
+       <property name="scope" value="public"/>  
+       <property name="severity" value="error"/>  
+     </module>  
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for Left curly braces-->
+          <!--See: http://checkstyle.sourceforge.net/config_blocks.html-->
+    <module name="LeftCurly">
+       <property name="option" value="eol"/>
+       <property name="maxLineLength" value="120"/>
+       <property name="tokens" value=" CLASS_DEF, CTOR_DEF, INTERFACE_DEF, LITERAL_CATCH,
+                                       LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR,
+                                       LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED,
+                                       LITERAL_TRY, LITERAL_WHILE, METHOD_DEF"/>
+</module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for LineLength-->
+          <!--checks for line length not more than 80-->
+	<module name="LineLength">
+    <property name="max" value="80"/>
+   </module> 
+          <!-- your standard Checks that come with Checkstyle -->
+          <module name="MethodParamPad">  
+       <!-- Whitespace is required after method name -->  
+       <property name="option" value="nospace" />  
+       <!-- Check only methods and constructors declarations -->  
+       <property name="tokens" value="METHOD_DEF, CTOR_DEF" />  
+     </module> 
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_modifier.html-->
+     <module name="ModifierOrder"/>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for Multiple Variable Declarations-->
+<!--checks for line length not more than 80-->
+	<module name="MultipleVariableDeclarations"/>
+          <!-- your standard Checks that come with Checkstyle -->
+<!-- Checks for Naming Conventions. -->
+<!-- See http://checkstyle.sf.net/config_naming.html -->
+<module name="ConstantName">
+    <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="LocalFinalVariableName"/>
+<module name="LocalVariableName">
+    <property name="format" value="^[a-z][_[a-zA-Z0-9]]*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="MemberName">
+    <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="MethodName">
+    <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="PackageName"/>
+<module name="ParameterName">
+    <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="StaticVariableName">
+    <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    <property name="tokens" value="PARAMETER_DEF"/>
+</module>
+<module name="TypeName"/>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for Need Braces-->
+          <!--See: http://checkstyle.sourceforge.net/config_blocks.html-->
+    <module name="NeedBraces">
+       <property name="tokens" value=" LITERAL_DO, LITERAL_ELSE,
+                                       LITERAL_IF, LITERAL_FOR, LITERAL_WHILE"/>
+    </module>
+      <module name="NoWhitespaceAfter">
+      <!-- Checks that there is no whitespace after various unary operators.
+           Linebreaks are allowed.
+      -->
+      <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS,
+        UNARY_PLUS"/>
+      <property name="allowLineBreaks" value="true"/>
+      <property name="severity" value="error"/>
+    </module>
+      <module name="NoWhitespaceBefore">
+      <!-- Checks that there is no whitespace before various unary operators.
+           Linebreaks are allowed.
+      -->
+      <property name="tokens" value="SEMI, DOT, POST_DEC, POST_INC"/>
+      <property name="allowLineBreaks" value="true"/>
+      <property name="severity" value="error"/>
+    </module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_modifier.html-->
+     <module name="OperatorWrap">
+         <property name="option" value="eol"/>
+         <property name="tokens" value=" ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN,
+                                         BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT,
+                                         LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, MINUS_ASSIGN,
+                                         MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, SL,
+                                         SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN"/>
+</module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--See: http://checkstyle.sourceforge.net/config_whitespace.html-->
+<module name="ParenPad">  
+       <!-- Whitespace required before ')' and after ')' -->  
+       <property name="option" value="nospace"/>  
+     </module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for Right curly braces-->
+          <!--See: http://checkstyle.sourceforge.net/config_blocks.html-->
+    <!-- '}' rules -->  
+     <module name="RightCurly">  
+       <!-- '}' should be on the same line as a next statement -->  
+       <property name="option" value="same"/>  
+       <property name="severity" value="error"/>  
+     </module>
+          <!-- your standard Checks that come with Checkstyle -->
+          <!--checks for Whitespace Around-->
+          <!--See: http://checkstyle.sourceforge.net/config_whitespace.html-->
+<module name="WhitespaceAround">
+      <!-- Checks that various tokens are surrounded by whitespace.
+           This includes most binary operators and keywords followed
+           by regular or curly braces.
+      -->
+      <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR,
+        BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN,
+        EQUAL, GE, GT, LAND, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE,
+        LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN,
+        LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS,
+        MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION,
+        SL, SL_ASSIGN, SR_ASSIGN, STAR, STAR_ASSIGN"/>
+      <property name="severity" value="error"/>
+    </module>
+	<module name="VisibilityModifier">
+    </module>
+</module>
+</module>  

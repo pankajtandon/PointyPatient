@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Jasmine Test Runner</title>
+
+    <!-- Jasmine stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../styles/jasmine.css">
+
+    <!-- Jasmine core and HTML -->
+    <script type="text/javascript" src="../lib/jasmine.js"></script>
+    <script type="text/javascript" src="../lib/jasmine-html.js"></script>
+    <script type="text/javascript" src="../lib/jasmine.async.js"></script>
+
+    <!-- JavaScript libraries on which source depends -->
+    <script type="text/javascript" src="../lib/console.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/jquery/jquery-ui-1.10.3.custom.js"></script>
+    <script type="text/javascript" src="../lib/jasmine-jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../lib/jasmine.console_reporter.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+    
+    <script type="text/javascript" src="../lib/angular-mocks.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/angular/restangular.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/lib/underscore/underscore.js"></script> 
+
+    <!-- Script source to test and other files on which source depends -->
+    <script type="text/javascript" src="../../main/webapp/app/js/app.js"></script>
+    <script type="text/javascript" src="../../main/webapp/app/js/controllers/MainMenuController.js"></script>  
+    <script type="text/javascript" src="../../main/webapp/app/js/controllers/PatientController.js"></script>  
+    <script type="text/javascript" src="../../main/webapp/app/js/services/PatientService.js"></script> 
+    <script type="text/javascript" src="../../main/webapp/app/js/services/PointyDateService.js"></script> 
+    <script type="text/javascript" src="../../main/webapp/app/js/directives/DatePicker.js"></script> 
+
+    
+    <!-- Test script -->
+    <script type="text/javascript" src="services/PatientServiceSpec.js"></script> 
+    <script type="text/javascript" src="controllers/PatientControllerSpec.js"></script>  
+</head>
+<body>
+    <script type="text/javascript">
+        jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+        jasmine.getEnv().execute();
+    </script>
+</body>
+</html>

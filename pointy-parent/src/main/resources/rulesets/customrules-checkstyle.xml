@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<module name="Checker">
+	<module name="TreeWalker">
+    <!-- your standard Checks that come with Checkstyle -->
+	<!-- Checks for Copyright -->
+	<!-- See http://checkstyle.sourceforge.net/config_misc.html -->
+      <module name="Regexp">
+        <property 
+                name="format"
+                value="Copyright"/>
+      </module>
+	</module>
+</module>

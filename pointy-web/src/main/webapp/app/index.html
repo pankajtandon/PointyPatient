@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="pointyApp">
+<head>
+    <meta charset="utf-8">
+    <title>Pointy Patient</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/app.css"/>    
+</head>
+<body>
+<div class="container">
+    <div class="navbar" ng-controller="MainMenuController">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="#/registerPatient">Register Patient</a></li>
+                <li><a href="#/patients" >List Patients</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+
+</div>
+<!-- Libraries -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/restangular.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<script src="lib/underscore/underscore-min.js"></script>
+<script src="lib/jquery/jquery-1.10.2.js"></script> 
+<script src="lib/jquery/jquery-ui-1.10.3.custom.js"></script>
+<script src="lib/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+<script src="lib/date/xdate.js"></script>
+
+<!-- Routes and config-->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainMenuController.js"></script>
+<script src="js/controllers/PatientController.js"></script>
+
+<!-- Services -->
+<script src="js/services/PatientService.js"></script>
+<script src="js/services/PointyDateService.js"></script>
+
+<!-- Directves -->
+<script src="js/directives/DatePicker.js"></script>
+
+
+
+	
+</body>
+</html>

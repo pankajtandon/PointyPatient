@@ -1,0 +1,30 @@
+/* app css stylesheet */
+.hoverwell:hover {
+  background-color: #52575c;
+  cursor: pointer;
+}
+select, textarea {
+  color: #52575c;
+}
+
+.well-title {
+  margin-top: 0px;
+}
+.session {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.votingWidget {
+  height: 64px;
+  padding: 7px;
+}
+
+.votingButton {
+  padding-left:6px;
+  cursor:pointer;
+}
