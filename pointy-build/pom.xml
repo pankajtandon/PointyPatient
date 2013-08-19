@@ -3,6 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nayidisha.pointy</groupId>
+	<version>1.0.0.CI-SNAPSHOT</version>
 	<artifactId>pointy-build</artifactId>
 	<packaging>pom</packaging>
 	<name>Pointy Build</name>
@@ -11,13 +13,6 @@
 	<description>
 		<![CDATA[This project is used to build all Pointy projects]]>
 	</description>
-
-	<parent>
-		<groupId>com.nayidisha.pointy</groupId>
-		<artifactId>pointy-parent</artifactId>
-		<version>1.0.0.CI-SNAPSHOT</version>
-		<relativePath>../</relativePath>
-	</parent>
 
     <modules>
       <module>../pointy-parent</module>

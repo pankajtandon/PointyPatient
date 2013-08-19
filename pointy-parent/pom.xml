@@ -258,19 +258,33 @@
 	</reporting>
 	<profiles>
 		<profile>
-			<id>loc</id>
+			<id>dev</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<env>loc</env>
-				<logfile.location.pointy>pointy-api.log</logfile.location.pointy>
+				<env>dev</env>
+				<logfile.location>pointy-web-dev.log</logfile.location>
 			</properties>
 		</profile>
-
+		<profile>
+			<id>qa</id>
+			<properties>
+				<env>qa</env>
+				<logfile.location>pointy-web-qa.log</logfile.location>
+			</properties>
+		</profile>		
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>prod</env>
+				<logfile.location>pointy-web-prod.log</logfile.location>
+			</properties>
+		</profile>		
 		<profile>
 			<id>alltests</id>
 			<properties>
+			  <env>test</env>
 			  <test.include.pattern>**/*Tests.java</test.include.pattern>
 			</properties>
 		</profile>

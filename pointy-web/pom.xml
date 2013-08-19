@@ -21,9 +21,12 @@
 				<version>2.4</version>
 				<configuration>
 					<failOnMissingWebXml>true</failOnMissingWebXml>
-					<packagingExcludes>test/**</packagingExcludes>
+					<!-- Since jetty is deployed with wars (instead of exploded wars), these tests need to get in there for integ tests -->
+					<!-- Exploded wars do not work in jetty for multiple webapps -->
+					<!-- Not a good idea to place test files in the war. Use a separate profile when in production. -->
+					<!-- <packagingExcludes>test/**</packagingExcludes> -->
 					<filters>
-						<filter>${project.basedir}/src/main/resources/web.properties</filter>
+						<filter>${project.basedir}/src/main/resources/${env}.properties</filter>
 					</filters>
 					<nonFilteredFileExtensions> 
             			<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
@@ -165,6 +168,7 @@
 		          <includes>
 		            <include>**/E2ETests.java</include>
 		          </includes>
+		          <testFailureIgnore>false</testFailureIgnore>
 		        </configuration>
 	          </execution>
 	        </executions>
@@ -176,26 +180,33 @@
 				<configuration>
 					<stopPort>9968</stopPort>
 					<stopKey>STOP</stopKey>
-					<webApp>${basedir}/target/pointy</webApp>
-					<contextPath>/pointy</contextPath>
+			        <contextHandlers>            
+			            <contextHandler implementation="org.mortbay.jetty.webapp.WebAppContext">
+			              <war>${basedir}/target/pointy.war</war>
+			              <contextPath>/pointy</contextPath>
+			            </contextHandler>
+			        
+			            <contextHandler implementation="org.mortbay.jetty.webapp.WebAppContext">
+			              <war>${basedir}/../pointy-api/target/pointy-api.war</war>
+			              <contextPath>/pointy-api</contextPath>
+			            </contextHandler>
+			        </contextHandlers> 					
 			        <connectors>
 			            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
 			              <port>9020</port>
 			              <maxIdleTime>60000</maxIdleTime>
 			            </connector>
 			        </connectors>
-			        <debug>true</debug>
-			        <verbose>true</verbose>
 				</configuration>
 				<executions>
 					<execution>
 						<id>start-jetty</id>
 						<phase>pre-integration-test</phase>
 						<goals>
-							<goal>run-exploded</goal>
+							<goal>run</goal>
 						</goals>
 						<configuration>
-							<daemon>true</daemon>
+							<daemon>true</daemon> 
 							<reload>manual</reload>
 						</configuration>
 					</execution>
