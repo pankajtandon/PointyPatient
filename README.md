@@ -6,7 +6,7 @@ A reference implementation for how to build an Angular JS application backed by 
 Features
 ---
 
-This app showcases the following features ([related blog post](http://nayidisha.com/techblog/?p=1653&preview=true "AngularEE")):
+This app showcases the following features ([related blog post](http://nayidisha.com/techblog/angular-js-from-a-different-angle "AngularEE")):
 
 - How to build layers in an Angular JS MVC stack.
 - How to write tests for each layer of the Angular stack
@@ -16,7 +16,7 @@ This app showcases the following features ([related blog post](http://nayidisha.
 Related Blog Post
 ----
 
-See [here for a blog post](http://nayidisha.com/techblog/?p=1653&preview=true "AngularEE") explaining this effort.
+See [here for a blog post](http://nayidisha.com/techblog/angular-js-from-a-different-angle "AngularEE") explaining this effort.
 
 Checkout
 ---
