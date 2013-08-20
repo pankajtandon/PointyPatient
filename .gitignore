@@ -22,5 +22,6 @@
 /**/*.project
 /**/*.pmd
 /**/*.springBeans
-/**/target
-
+/**/target/**
+db.h2.db
+pointy-*.log

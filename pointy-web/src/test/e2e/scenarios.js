@@ -6,6 +6,7 @@ describe('Pointy Patient App E-2-E Tests', function() {
 	var rootContext = '../../app/index.html';
 	var FIRST = "Steely";
 	var LAST = "Dan";
+	var SOME_DATE = '03/04/2000';
 
 	describe('Pointy Patient App', function() {
 		
@@ -14,7 +15,7 @@ describe('Pointy Patient App E-2-E Tests', function() {
 	      
 		  input('patient.firstName').enter(FIRST);
 		  input('patient.lastName').enter(LAST);
-		  input('patient.visitDate').enter('03/04/2000');
+		  input('patient.visitDate').enter(SOME_DATE);
 		  //pause();
 		  element('#save-patient-button').click();
 		  expect(element('.ng-scope.ng-binding').text()).toBe("Patient registered successfully!");
@@ -33,7 +34,7 @@ describe('Pointy Patient App E-2-E Tests', function() {
 		      
 			  input('patient.firstName').enter(FIRST);
 			  input('patient.lastName').enter(LAST);
-			  input('patient.visitDate').enter('03/04/2000');
+			  input('patient.visitDate').enter(SOME_DATE);
 			  //pause();
 			  element('#save-patient-button').click();
 			  expect(element('.ng-scope.ng-binding').text()).toBe("Patient registered successfully!");
