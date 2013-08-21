@@ -63,7 +63,9 @@ The jetty server can be started by doing the following:
 
 `cd $POINTY_HOME`
 
-`mvn  jetty:run -Pdev,alltests -f pointy-web/pom.xml`
+`mvn clean install -f pointy-build/pom.xml -Palltests,dev`
+
+`mvn jetty:run -Palltests,dev -f pointy-web/pom.xml`
 
 
 Next, fire up a browser and navigate to localhost:9020/pointy

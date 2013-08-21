@@ -14,7 +14,7 @@ pointyApp.controller('PatientController',
             	var aPromise = PatientService.save(patient);
             	aPromise.then(function(object){
             		patient.id = object.id;
-            		showAlert("success", "Patient registered successfully!");
+            		showAlert("success", "Patient registered successfully! Just went over to pointy-api webapp using Restangular and saved this patient!");
             	}, function errorCallback(error) {
             		showAlert("error", error);
             	});
@@ -30,9 +30,9 @@ pointyApp.controller('PatientController',
         	PatientService.list().then(function(o){
         		$scope.patientList = o;
         		if (o.length == 0){
-        			showAlert("warning", "No patients registered!");
+        			showAlert("warning", "No patients registered! Checked for patients by making a call to pointy-api webapp using Restangular!");
         		} else {
-        			showAlert("info", "Found " + o.length + " patients!");
+        			showAlert("info", "Found " + o.length + " patients! Checked for patients by making a call to pointy-api webapp using Restangular!");
         		}
         	}, function(e){
         		showAlert("error", e);

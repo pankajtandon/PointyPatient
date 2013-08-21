@@ -18,7 +18,7 @@ describe('Pointy Patient App E-2-E Tests', function() {
 		  input('patient.visitDate').enter(SOME_DATE);
 		  //pause();
 		  element('#save-patient-button').click();
-		  expect(element('.ng-scope.ng-binding').text()).toBe("Patient registered successfully!");
+		  expect(element('.ng-scope.ng-binding').text()).toBe("Patient registered successfully! Just went over to pointy-api webapp using Restangular and saved this patient!");
 		});
 		
 		//Learn JQuery!
