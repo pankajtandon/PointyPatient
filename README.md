@@ -13,6 +13,11 @@ This app showcases the following features ([related blog post](http://nayidisha.
 - How to run Angular and Server-side tests during the build
 - How to make the Angular stack aware of the environment it is running in.
 
+Demo
+---
+
+View a demo [here](http://pointy-nayidisha.rhcloud.com/pointy)
+
 Related Blog Post
 ----
 

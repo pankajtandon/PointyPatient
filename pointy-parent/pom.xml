@@ -278,7 +278,7 @@
 			<id>prod</id>
 			<properties>
 				<env>prod</env>
-				<logfile.location>pointy-web-prod.log</logfile.location>
+				<logfile.location>/tmp/pointy/logs/pointy-web-prod.log</logfile.location>
 			</properties>
 		</profile>		
 		<profile>
