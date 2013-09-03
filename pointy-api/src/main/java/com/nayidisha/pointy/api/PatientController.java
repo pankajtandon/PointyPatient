@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.nayidisha.pointy.domain.Patient;
 import com.nayidisha.pointy.services.patient.PatientService;
+import com.nayidisha.pointy.support.ApiResponse;
 
 @Controller
 @RequestMapping(value="/patients")

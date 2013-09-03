@@ -1,4 +1,4 @@
-package com.nayidisha.pointy.api;
+package com.nayidisha.pointy.support;
 
 import java.io.Serializable;
 

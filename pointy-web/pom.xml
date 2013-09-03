@@ -94,7 +94,7 @@
                         <!-- and are a pain to debug -->  
                         <source>${project.basedir}/src/test/lib/console.js</source>
                         <source>${project.basedir}/src/main/webapp/app/lib/jquery/jquery-1.10.2.js</source>
-                        <source>${project.basedir}/src/main/webapp/app/lib/jquery/jquery-ui-1.10.3.custom.js</source>
+                        <source>${project.basedir}/src/main/webapp/app/lib/jquery/jquery-ui-1.10.3.js</source>
                         <source>${project.basedir}/src/test/lib/jasmine-jquery-1.4.2.js</source>
                         <source>${project.basedir}/src/test/lib/jasmine.console_reporter.js</source>                       
                         <source>${project.basedir}/src/main/webapp/app/lib/angular/angular.js</source>

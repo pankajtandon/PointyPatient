@@ -12,10 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
-
-import com.nayidisha.pointy.util.DateSerializer;
-
 @Entity
 @Table(name="patient")
 public class Patient implements Serializable{
@@ -60,7 +56,6 @@ public class Patient implements Serializable{
 		this.lastName = lastName;
 	}
 
-	@JsonSerialize(using=DateSerializer.class)
 	@Column(name="visit_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getVisitDate() {
