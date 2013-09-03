@@ -1,5 +1,6 @@
 package com.nayidisha.pointy.services.patient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -32,7 +33,18 @@ public class PatientServiceImpl implements PatientService {
 			
 	@Override
 	public List<Patient> findAllPatients() {
-		return patientDAO.loadAll();
+		List<Patient> validPatientList = new ArrayList<Patient>();
+		List<Patient> patientList = patientDAO.loadAll();
+		if (patientList != null){
+			for (Patient patient : patientList) {
+				if (patient.valid()){
+					validPatientList.add(patient);
+				} else {
+					LOG.warn("Patient entity with Id: " + patient.getId() + " is invalid. Skipping...");
+				}
+			}
+		}
+		return validPatientList;
 	}
 
 	@Override

@@ -12,8 +12,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.apache.commons.lang3.StringUtils;
+
 @Entity
 @Table(name="patient")
+
 public class Patient implements Serializable{
 
 	private static final long serialVersionUID = 5587478887234938748L;
@@ -26,6 +29,14 @@ public class Patient implements Serializable{
 	private String address;
 	private String city;
 	private String state;
+	
+	
+	public boolean valid(){
+		return ((id != null) &&
+				(!StringUtils.isEmpty(firstName)) &&
+				(!StringUtils.isEmpty(lastName)) &&
+				(visitDate != null)) ;
+	}
 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
