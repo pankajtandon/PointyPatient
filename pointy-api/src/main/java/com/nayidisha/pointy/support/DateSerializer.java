@@ -1,4 +1,4 @@
-package com.nayidisha.pointy.util;
+package com.nayidisha.pointy.support;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,8 +13,10 @@ public class DateSerializer extends JsonSerializer<Date> {
     @Override
     public void serialize(Date aDate, JsonGenerator generator, SerializerProvider aProvider) throws IOException, JsonProcessingException {      
 
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); 
         String formattedDate = formatter.format(aDate);
+        
         generator.writeString(formattedDate);
     }
 }
+

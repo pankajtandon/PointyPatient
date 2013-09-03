@@ -32,6 +32,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.nayidisha.pointy.domain.Patient;
 import com.nayidisha.pointy.services.patient.PatientService;
+import com.nayidisha.pointy.support.ApiResponse;
 
 /**
  * This is a sample test that represents server side tests.

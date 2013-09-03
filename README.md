@@ -83,7 +83,6 @@ TODOs
 The following still need to be accomplished. Pull Requests are welcome:
 
 - Complete E2E tests using jQuery
-- Fix the date directive. For some reason, the date directive that I wrote using jQuery, doesn't seem to work. But since it is not central to the idea of this project, I'm not losing sleep over this.
 - Write a Spring Service level unit test
 - Write a Spring Service level Integration Test
 - Write a Spring Repository level unit test

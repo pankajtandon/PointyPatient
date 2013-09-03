@@ -11,9 +11,7 @@
                 <input id="firstName" type="text" required placeholder="First Name..." ng-model="patient.firstName" />
                 <input id="lastName" type="text" required placeholder="Last Name..." ng-model="patient.lastName" />                
                 <label for="visitDate">Visit Date:</label>
-                <input id="visitDate" type="text" required date-picker placeholder="format (mm/dd/yyyy)..." ng-model="patient.visitDate" /> 
-                <!--  <input id="visitDate" ui-date="{dateFormat: 'yy-mm-dd'}" ui-date-format="yy-mm-dd" required  placeholder="format (mm/dd/yyyy)..." ng-model="patient.visitDate" /> -->
-                <!-- <input ui-date="{dateFormat: 'yy-mm-dd'}" ui-date-format="yy-mm-dd" ng-model="customer.contract_end_date"></input> -->
+	            <input id="visitDate" type="text" required date-picker data-date-format="mm/dd/yyyy" placeholder="format (mm/dd/yyyy)..." ng-model="patient.visitDate" /> 
                 <label for="visitLocation">Location:</label>
                 <input id="visitLocation" type="text"  placeholder="Address..." ng-model="patient.address" />
                 <br />
@@ -25,7 +23,7 @@
 
             <br />
 
-            <button id="save-patient-button" type="submit" class="btn btn-primary" ng-disabled="patientForm.$invalid" ng-click="savePatient(patient, patientForm)">Save</button>
+            <button id="save-patient-button" type="submit" class="btn btn-primary"  ng-click="savePatient(patient, patientForm)">Save</button>
             <button id="delete-patient-button" type="button" class="btn btn-default" ng-click="deletePatient()">Delete</button>
 
         </form>
