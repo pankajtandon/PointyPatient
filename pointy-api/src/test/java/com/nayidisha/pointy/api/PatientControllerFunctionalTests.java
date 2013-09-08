@@ -55,7 +55,8 @@ public class PatientControllerFunctionalTests {
 	@Inject
 	private PatientService patientService;
 	
-	private ObjectMapper mapper = new ObjectMapper();
+	@Inject
+	private ObjectMapper jacksonObjectMapper;
 	
 	private Long createdPatientId;
 	
@@ -117,12 +118,12 @@ public class PatientControllerFunctionalTests {
 	
 	private byte[] convertObjectToBytes(Object o)
 			throws IOException {
-		return mapper.writeValueAsBytes(o); 
+		return jacksonObjectMapper.writeValueAsBytes(o); 
 	}
 	
 	private  ApiResponse<Patient> jsonToObject(String jsonString) throws IOException {
-		mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
-		return mapper.readValue(jsonString, new TypeReference<ApiResponse<Patient>>() {});
+		jacksonObjectMapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
+		return jacksonObjectMapper.readValue(jsonString, new TypeReference<ApiResponse<Patient>>() {});
 	}
 	
 	private Patient createTestPatient() {

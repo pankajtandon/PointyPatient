@@ -3,8 +3,8 @@
 var pointyApp = angular.module('pointyApp', ['restangular', 'ui.bootstrap'])
 				.config(function ($routeProvider, RestangularProvider, $locationProvider) {
 					
-					//RestangularProvider.setBaseUrl('http://localhost:8080/pointy-api');
-					RestangularProvider.setBaseUrl("${RestEndpoint}");
+					RestangularProvider.setBaseUrl('http://localhost:8080/pointy-api');
+					//RestangularProvider.setBaseUrl("${RestEndpoint}");
 					
 					RestangularProvider.setResponseExtractor(function(response, operation, what, url) {
 					  var newResponse = response.payload;
@@ -38,6 +38,16 @@ var pointyApp = angular.module('pointyApp', ['restangular', 'ui.bootstrap'])
 				            templateUrl: 'views/Patient.html',
 				            controller: 'PatientController'
 				        });						    
+				    $routeProvider.when('/pointyStackedBarChart',
+				        {
+				            templateUrl: 'views/StackedBarChart.html',
+				            controller: 'StackedBarChartController'
+				        });
+				    $routeProvider.when('/pointyPieChart',
+				        {
+				            templateUrl: 'views/PieChart.html',
+				            controller: 'PieChartController'
+				        });				    
 				    $routeProvider.otherwise({redirectTo: '/registerPatient'});
 				    //$locationProvider.html5Mode(true);
 });
