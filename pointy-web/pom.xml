@@ -102,7 +102,8 @@
                        
                         <source>${project.basedir}/src/test/lib/angular-mocks.js</source>
                         <source>${project.basedir}/src/main/webapp/app/lib/angular/restangular.js</source> 
-                        <source>${project.basedir}/src/main/webapp/app/lib/underscore/underscore.js</source>                    
+                        <source>${project.basedir}/src/main/webapp/app/lib/underscore/underscore.js</source>
+                        <source>${project.basedir}/src/main/webapp/app/lib/date/xdate.js</source>                  
 	          </preloadSources>
 	        </configuration>
 	      </plugin>

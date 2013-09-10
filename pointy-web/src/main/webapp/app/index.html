@@ -9,11 +9,13 @@
 </head>
 <body>
 <div class="container">
-    <div class="navbar" ng-controller="MainMenuController">
+    <div class="navbar" >
         <div class="navbar-inner">
             <ul class="nav">
                 <li><a href="#/registerPatient">Register Patient</a></li>
-                <li><a href="#/patients" >List Patients</a></li>
+                <li><a href="#/patients">List Patients</a></li>
+                <li><a href="#/pointyPieChart" >Pie Chart</a></li>
+                <li><a href="#/pointyBarChart" >Bar Chart</a></li>
             </ul>
         </div>
     </div>
@@ -33,22 +35,29 @@
 <script src="lib/underscore/underscore-min.js"></script>
 <script src="lib/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
 <script src="lib/bootstrap/bootstrap-datepicker.js"></script> 
-
+<script src="lib/d3/d3.v3.js"></script>
 <script src="lib/date/xdate.js"></script>
 
 <!-- Routes and config-->
 <script src="js/app.js"></script>
 
 <!-- Controllers -->
-<script src="js/controllers/MainMenuController.js"></script>
+<script src="js/controllers/CommonController.js"></script>
 <script src="js/controllers/PatientController.js"></script>
+<script src="js/controllers/StackedBarChartController.js"></script>
+<script src="js/controllers/PieChartController.js"></script>
+<script src="js/controllers/BarChartController.js"></script>
 
 <!-- Services -->
 <script src="js/services/PatientService.js"></script>
 <script src="js/services/PointyDateService.js"></script>
+<script src="js/services/ReportingService.js"></script>
 
-<!-- Directves -->
+<!-- Directives -->
 <script src="js/directives/DatePicker.js"></script>
+<script src="js/directives/PointyStackedBarChart.js"></script>
+<script src="js/directives/PointyPieChart.js"></script>
+<script src="js/directives/PointyBarChart.js"></script>
 
 
 
