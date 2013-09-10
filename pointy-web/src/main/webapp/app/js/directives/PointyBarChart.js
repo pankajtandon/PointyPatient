@@ -3,7 +3,7 @@
 pointyApp.directive('pointyBarChart', [function () {
 
 
-	var margin = {top: 20, right: 20, bottom: 30, left: 40};
+	var margin = {top: 20, right: 20, bottom: 80, left: 40};
 
 	
   return {
@@ -69,6 +69,13 @@ pointyApp.directive('pointyBarChart', [function () {
             .attr("class", "x axis")
             .attr("transform", "translate(0, " + height + ")")
             .call(xAxis);
+        
+        //Rotate the x-ticks
+        svg.selectAll(".x.axis")
+        .selectAll("text")
+        .attr("transform", function(d) {
+        		return "rotate(90) translate(" + ((this.getBBox().width/2) + 5 ) + "," + ((this.getBBox().height) -30)  + ")";
+        	});
 
         svg.append("g")
             .attr("class", "y axis")
