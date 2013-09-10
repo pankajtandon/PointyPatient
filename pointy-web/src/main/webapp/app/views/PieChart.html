@@ -1,7 +1,10 @@
 <div style="padding-left:20px; padding-right:20px">
+  <div class="container" >
+  <h4>Visits By Date</h4>
+  <alert ng-show=$parent.showFeedback close="closeAlert()" type=alertType>{{status}}</alert>
 
-  <p class="error">{{error}}</p>
   <div align="center" >
-    <pointy-pie-chart value="chartData" width="500"  donut_hole_as_percent_of_radius=".4" />
+    <pointy-pie-chart value="chartData" width="500"  donut_hole_as_percent_of_radius=".05" />
+   </div>
    </div>
 </div>

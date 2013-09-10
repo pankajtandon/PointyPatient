@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
+import org.joda.time.DateMidnight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -35,10 +36,9 @@ public class ReportingServiceImpl implements ReportingService {
 		Map<Date, Integer> freqMap = new Hashtable<Date, Integer>();
 		for (Patient patient : patientList) {
 			if (patient.valid()){
-				Date d = patient.getVisitDate();
-				int i = (freqMap.get(d) == null? 0: freqMap.get(d));				
-				freqMap.put(d, ++i);
-				
+				DateMidnight dm = new DateMidnight(patient.getVisitDate());
+				int i = (freqMap.get(dm.toDate()) == null? 0: freqMap.get(dm.toDate()));
+				freqMap.put(dm.toDate(), ++i);			
 			}
 		}
 		Set<Date> keys = freqMap.keySet();

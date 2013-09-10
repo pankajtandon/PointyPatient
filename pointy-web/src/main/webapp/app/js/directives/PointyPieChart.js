@@ -1,3 +1,5 @@
+'use strict';
+
 pointyApp.directive('pointyPieChart', [function () {
 
 	var color  = d3.scale.category20();	
@@ -8,7 +10,7 @@ pointyApp.directive('pointyPieChart', [function () {
   return {
     restrict: 'E',
     scope: {
-      value: '=',
+      chartValues: '=value',
       width: '=',
       height: '=',
       donutHoleAsPercentOfRadius: '='
@@ -32,7 +34,7 @@ pointyApp.directive('pointyPieChart', [function () {
   	  var arc = d3.svg.arc()
   	  .outerRadius(radius - 10)
   	  .innerRadius(donutHoleAsPercentOfRadius * radius);
-      
+  	  
       // set up initial svg object
       var svg = d3.select(element[0])
         .append("svg")
@@ -41,12 +43,12 @@ pointyApp.directive('pointyPieChart', [function () {
         .append("g")
         	.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
            
-      scope.$watch('value', function (newVal, oldVal) {
+      scope.$watch('chartValues', function (newVal, oldVal) {
 
         // clear the elements inside of the directive
         svg.selectAll('*').remove();
 
-        // if 'value' is undefined, exit
+        // if 'chartValues' is undefined, exit
         if (!newVal) {
           return;
         }
@@ -68,7 +70,7 @@ pointyApp.directive('pointyPieChart', [function () {
 	        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
 	        .attr("dy", ".35em")
 	        .style("text-anchor", "middle")
-	        .text(function(d) { return d.data.key; });
+	        .text(function(d) { return d.data.key + "(" + d.data.value + ")"; });
 
       });
     }

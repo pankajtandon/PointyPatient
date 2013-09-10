@@ -38,16 +38,16 @@ var pointyApp = angular.module('pointyApp', ['restangular', 'ui.bootstrap'])
 				            templateUrl: 'views/Patient.html',
 				            controller: 'PatientController'
 				        });						    
-				    $routeProvider.when('/pointyStackedBarChart',
-				        {
-				            templateUrl: 'views/StackedBarChart.html',
-				            controller: 'StackedBarChartController'
-				        });
 				    $routeProvider.when('/pointyPieChart',
 				        {
 				            templateUrl: 'views/PieChart.html',
 				            controller: 'PieChartController'
 				        });				    
+				    $routeProvider.when('/pointyBarChart',
+				        {
+				            templateUrl: 'views/BarChart.html',
+				            controller: 'BarChartController'
+				        });	
 				    $routeProvider.otherwise({redirectTo: '/registerPatient'});
 				    //$locationProvider.html5Mode(true);
 });

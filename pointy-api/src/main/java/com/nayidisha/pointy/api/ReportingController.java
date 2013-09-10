@@ -23,20 +23,19 @@ public class ReportingController {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(ReportingController.class);
 	
-	
 	@Inject
 	public ReportingController(ReportingService reportingService){
 		this.reportingService = reportingService;
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value="/visitFrequency")
+	@RequestMapping(method = RequestMethod.GET, value="/visitFrequency") 
 	public @ResponseBody ApiResponse<List<VisitFrequency>> getVisitFrequencyList(){
 		ApiResponse<List<VisitFrequency>> apiResponse = new ApiResponse<List<VisitFrequency>>();
 		List<VisitFrequency> visitFrequencyList = new ArrayList<VisitFrequency>();
 		visitFrequencyList = reportingService.getVisitFrequency();
 		apiResponse.setPayload(visitFrequencyList);
 		apiResponse.setStatus(ApiResponse.STATUS_SUCCESS);
-				
+		LOG.debug("Sent back " + visitFrequencyList.size() + " data elements!");
 		return  apiResponse;
 	}
 }

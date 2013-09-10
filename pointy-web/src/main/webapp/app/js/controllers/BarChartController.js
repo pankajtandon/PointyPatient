@@ -1,7 +1,6 @@
 'use strict';
 
-pointyApp.controller('PieChartController', ['$scope',  'ReportingService', function PieChartController ($scope, ReportingService) {
-
+pointyApp.controller('BarChartController', ['$scope', 'ReportingService', function BarChartController($scope, ReportingService) {
     var aPromise = ReportingService.getVisitFrequencyList();
 	aPromise.then(function(object){
 		$scope.chartData = object;
@@ -18,15 +17,4 @@ pointyApp.controller('PieChartController', ['$scope',  'ReportingService', funct
 		$scope.showFeedback = "true";
 		$scope.alertType = type;
     }
-	  /*
-	  [
-	   {"key":"one", "value": "10"},
-	   {"key":"two", "value": "30"},
-	   {"key":"three", "value": "20"},
-	   {"key":"four", "value": "5"},
-	   {"key":"five", "value": "15"},
-	   {"key":"six", "value": "20"},
-	   {"key":"seven", "value": "10"}
-	   ];
-	   */
 }]);

@@ -66,6 +66,8 @@ public class ReportingControllerFunctionalTests {
 	private MockMvc mockMvc; 
 	
 	private DateTime today;
+	private DateTime todayInTheAM;
+	private DateTime todayInThePM;
 	private DateTime tomorrow;
 	private DateTime dayAfter;
 	private DateTime yesterday;
@@ -74,13 +76,20 @@ public class ReportingControllerFunctionalTests {
 		this.mockMvc = webAppContextSetup(this.wac).build();
 		
 		today = new DateTime();
+		int todaysYear = today.getYear();
+		int todaysMonth = today.getMonthOfYear();
+		int todaysDay = today.getDayOfMonth();
+		todayInTheAM = new DateTime(todaysYear, todaysMonth, todaysDay, 10, 15); //10:15 am
+		todayInThePM = new DateTime(todaysYear, todaysMonth, todaysDay, 14, 25); //2:25 pm
+		
+		
 		tomorrow = today.plusDays(1);
 		dayAfter = tomorrow.plusDays(1);
 		yesterday = today.minusDays(1);
 		
 		Patient patient1 = this.createTestPatient(yesterday);
-		Patient patient2 = this.createTestPatient(today);
-		Patient patient25 = this.createTestPatient(today);
+		Patient patient2 = this.createTestPatient(todayInTheAM);
+		Patient patient25 = this.createTestPatient(todayInThePM);
 		Patient patient3 = this.createTestPatient(tomorrow);
 		Patient patient4 = this.createTestPatient(dayAfter);
 		

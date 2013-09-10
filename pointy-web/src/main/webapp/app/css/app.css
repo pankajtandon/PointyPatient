@@ -30,6 +30,8 @@ select, textarea {
 }
 
 /* Added with d3 charts */
+
+/* For pie charts */
 body {
   font: 14px Helvetica Neue;
   text-rendering: optimizeLegibility;
@@ -50,4 +52,20 @@ h1 {
 }
 .error {
   color: red;
+}
+
+/* for barcharts */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: inline;
 }
