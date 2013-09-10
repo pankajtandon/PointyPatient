@@ -12,6 +12,7 @@ This app showcases the following features ([related blog post](http://nayidisha.
 - How to write tests for each layer of the Angular stack
 - How to run Angular and Server-side tests during the build
 - How to make the Angular stack aware of the environment it is running in.
+- Use [d3](http://d3js.org/) to render basic charts via angular directives.
 
 Demo
 ---
