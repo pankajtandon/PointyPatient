@@ -52,8 +52,7 @@ pointyApp.directive('pointyBarChart', [function () {
         .append("g")
         	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");    	
            
-      scope.$watch('chartValues', function (newVal, oldVal) {
-
+      scope.$watch('chartValues', function (newVal, oldVal) {  
         // clear the elements inside of the directive
         svg.selectAll('*').remove();
 

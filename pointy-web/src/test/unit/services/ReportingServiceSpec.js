@@ -72,7 +72,18 @@ describe('ReportingService Tests', function() {
         	});
 			$rootScope.$digest();
 			
-		}));    	
+		}));    
+		
+		it('should sorts visitFrequencies by date ascending ', inject(function($rootScope) {
+			var aPromise = localReportingService.getVisitFrequencyList();
+			expect(localRestangular.all(jasmine.any(Object)).getList()).toBe(deferred.promise);
+			aPromise.then(function(o2){
+        		expect(o2[1].key).toBe("2001-03-06"); //second element
+        		expect(o2[2].key).toBe("2004-03-05"); //third element
+        	});
+			$rootScope.$digest();
+			
+		})); 
     });
     
     

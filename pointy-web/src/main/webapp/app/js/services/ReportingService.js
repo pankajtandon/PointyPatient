@@ -24,6 +24,13 @@ pointyApp.factory('ReportingService',['Restangular', 'PointyDateService', functi
         			var o = {"key":visitDate, "value":numOfVisits};
         			list.push(o);
         		}
+        		
+        		//Sort by date
+        		list.sort(function(e1, e2) {
+        			var date1 = new XDate(e1.key);
+        			var date2 = new XDate(e2.key);
+        			return date1 - date2; 
+        		});
         		return list;
         	});
         	return aPromise;
