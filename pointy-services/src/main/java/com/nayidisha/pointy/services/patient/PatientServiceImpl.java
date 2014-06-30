@@ -39,7 +39,7 @@ public class PatientServiceImpl implements PatientService {
 			for (Patient patient : patientList) {
 				if (patient.valid()){
 					validPatientList.add(patient);
-				} else {
+				} else { 
 					LOG.warn("Patient entity with Id: " + patient.getId() + " is invalid. Skipping...");
 				}
 			}

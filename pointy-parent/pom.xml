@@ -64,6 +64,9 @@
 		</developer>
 
 	</developers>
+	
+
+
 
 
 	<build>
@@ -257,6 +260,15 @@
 		</plugins>
 	</reporting>
 	<profiles>
+	  <profile>
+	    <id>all</id>
+	        <modules>
+		      <module>../pointy-domain</module>
+		      <module>../pointy-services</module>
+		      <module>../pointy-api</module>     
+		      <module>../pointy-web</module>  
+		    </modules>
+	  </profile>	
 		<profile>
 			<id>dev</id>
 			<activation>
