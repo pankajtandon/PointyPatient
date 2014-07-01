@@ -19,10 +19,11 @@ Demo
 
 View a demo [here](http://pointy-nayidisha.rhcloud.com/pointy)
 
-Related Blog Post
+<s>Related Blog Post</s>
 ----
 
-See [here for a blog post](http://nayidisha.com/techblog/angular-js-from-a-different-angle "AngularEE") explaining this effort.
+<s>See [here for a blog post](http://nayidisha.com/techblog/angular-js-from-a-different-angle "AngularEE") explaining this effort.</s>
+
 
 Checkout
 ---
