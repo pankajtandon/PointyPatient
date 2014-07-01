@@ -6,7 +6,7 @@ pointyApp.factory('PatientService',['Restangular', 'PointyDateService', function
 	 * Local method to massage the date if needed.
 	 */
 	function massageDate(aDate){
-		return PointyDateService.convertJSONToMMDDYYYYDate(aDate);
+		return PointyDateService.convertToTimeAgo(aDate);
 	};
 
     return {
