@@ -55,7 +55,7 @@ describe('PatientService Tests', function() {
     	    deferred.resolve(patients);
     	    
     	    spyOn(localPointyDateService, "convertMMDDYYYYToJSONDate");
-    	    localDateConvertorSpy = spyOn(localPointyDateService, "convertJSONToMMDDYYYYDate");
+    	    localDateConvertorSpy = spyOn(localPointyDateService, "convertToTimeAgo");
 
             patient = {"id":"1", "firstName":"Joe", "lastName":"Longfellow", "visitDate":"03/04/2000", "address":"anAddress", "city":"aCity", "state":"aState"};
             patient2 = {"id":"2", "firstName":"Joe2", "lastName":"Longfellow2", "visitDate":"03/04/2000", "address":"anAddress", "city":"aCity", "state":"aState"};

@@ -43,7 +43,7 @@ Once you have downloaded and installed maven, please do the following:
 
 followed by:
 
-`mvn clean install -f pointy-build/pom.xml `
+`mvn clean install -f pointy-parent/pom.xml -Pall,dev `
 
 
 Run all tests
@@ -54,7 +54,7 @@ the Angular stack and *Spring MVC tests*, *Spring Transactional Tests* and JUnit
 
 `cd $POINTY_HOME`
 
-`mvn clean install -Pdev,alltests -f pointy-build/pom.xml`
+`mvn clean install -Pall,dev,alltests -f pointy-build/pom.xml`
 
 Run the app
 ---
