@@ -54,7 +54,7 @@ the Angular stack and *Spring MVC tests*, *Spring Transactional Tests* and JUnit
 
 `cd $POINTY_HOME`
 
-`mvn clean install -Pall,dev,alltests -f pointy-build/pom.xml`
+`mvn clean install -Pall,dev,alltests -f pointy-parent/pom.xml`
 
 Run the app
 ---
@@ -64,7 +64,7 @@ The jetty server can be started by doing the following:
 
 `cd $POINTY_HOME`
 
-`mvn clean install -f pointy-build/pom.xml -Palltests,dev`
+`mvn clean install -f pointy-parent/pom.xml -Pall,alltests,dev`
 
 `mvn jetty:run -Palltests,dev -f pointy-web/pom.xml`
 
